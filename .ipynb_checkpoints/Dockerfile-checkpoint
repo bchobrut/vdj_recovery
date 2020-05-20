@@ -6,7 +6,7 @@ RUN apt-get install -y locales locales-all
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
-RUN apt-get install software-properties-common
+RUN apt-get install -y software-properties-common
 RUN apt-add-repository universe
 RUN apt-get update
 RUN apt-get install -y python-pip
