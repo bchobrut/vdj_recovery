@@ -13,5 +13,5 @@ RUN apt-get install -y python-pip
 RUN yes | pip install pandas
 RUN yes | pip install biopython
 RUN yes | pip install regex
-RUN apt-get install -y git-all
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git-all
 RUN git clone https://github.com/bchobrut/vdj_recovery.git
