@@ -10,8 +10,8 @@ RUN apt-get install -y software-properties-common
 RUN apt-add-repository universe
 RUN apt-get update
 RUN apt-get install -y python-pip
-RUN pip install -y pandas
-RUN pip install -y biopython
-RUN pip install -y regex
+RUN yes | pip install pandas
+RUN yes | pip install biopython
+RUN yes | pip install regex
 RUN apt-get install -y git-all
 RUN git clone https://github.com/bchobrut/vdj_recovery.git
