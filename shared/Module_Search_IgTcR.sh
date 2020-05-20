@@ -1,7 +1,7 @@
-searchScript="/shared/SearchReads.sh"
+searchScript="/vdj_recovery/shared/SearchReads.sh"
 #Set bin paths
-samtoolsBin="/shared/bin/samtools"
-parallelBin="/shared/bin/parallel"
+samtoolsBin="/vdj_recovery/shared/bin/samtools"
+parallelBin="/vdj_recovery/shared/bin/parallel"
 
 samplesName="${bamFolder##*/}"
 
