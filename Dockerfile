@@ -13,4 +13,4 @@ CMD pip install -y pandas
 CMD pip install -y biopython
 CMD pip install -y regex
 CMD apt-get install -y git-all
-CMD git clone https://github.com/bchobrut/vdj_recovery.git
+#CMD git clone https://github.com/bchobrut/vdj_recovery.git
