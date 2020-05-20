@@ -87,7 +87,7 @@ fulldf = fulldf[["Read ID", "Read"]]
 df2 = df2.drop("Read ID", axis = 1)
 fulldf = pd.merge(fulldf, df2, how='left', on='Read')
 fulldf = fulldf[["Filename", "Read ID", "Read", "Chromosome", "Position", "VID", "V Match", "V Match Percent", "V Match Length", "JID", "J Match", "J Match Percent", "J Match Length", "JUNCTION", "CDR3", "Reason"]]
-fulldf.to_hdf(dir+"raw_output.h5", receptor)
+fulldf.to_hdf(os.path.dirname(os.path.dirname(path))+"raw_output.h5", receptor)
 del df2
 del fulldf
 del df

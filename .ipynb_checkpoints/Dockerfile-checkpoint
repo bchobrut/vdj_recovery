@@ -10,6 +10,7 @@ RUN apt-get install -y software-properties-common
 RUN apt-add-repository universe
 RUN apt-get update
 RUN apt-get install -y python-pip
+RUN apt-get install -y python-tk
 RUN yes | pip install pandas
 RUN yes | pip install biopython
 RUN yes | pip install regex
