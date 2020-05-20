@@ -15,6 +15,7 @@ RUN yes | pip install biopython
 RUN yes | pip install regex
 RUN yes | pip install openpyxl
 RUN yes | pip install tables
+RUN yes | pip install localcider
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git-all
 RUN git clone https://github.com/bchobrut/vdj_recovery.git
 CMD sh /vdj_recovery/Master_Header.sh
