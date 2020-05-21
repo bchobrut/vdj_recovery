@@ -10,7 +10,7 @@ start_time = time.time()
 receptor = str(sys.argv[1])
 path = str(sys.argv[2])
 cores = cpu_count()
-print "Using %s cores" %cores
+print("Using %s cores" %cores)
 
 dbpath = "/vdj_recovery/shared/db/"
 
@@ -39,7 +39,7 @@ def build_df(path,files):
         try:
             df2 = pd.read_csv(path+file, sep='\t', names=mycols)
         except:
-            print "File read error %s" %file
+            print("File read error %s" %file)
             pass
         df2 = df2[["Read ID", "Read", "Chromosome", "Position"]]
         df2["Filename"] = file
