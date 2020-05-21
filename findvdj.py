@@ -59,19 +59,19 @@ print("{0} Starting. Aligning {1} Reads".format(receptor, len(df)))
 results = pd.DataFrame()
 def f(i):
     read = df["Read"].iloc[i]
-    if receptor == "TRA":
+    if receptor == "TRA" or receptor == "TRA_UM":
         a = VDJ.TRA(read, dbpath)
-    elif receptor == "TRB":
+    elif receptor == "TRB" or receptor == "TRB_UM":
         a = VDJ.TRB(read, dbpath)
-    elif receptor == "TRD":
+    elif receptor == "TRD" or receptor == "TRD_UM":
         a = VDJ.TRD(read, dbpath)
-    elif receptor == "TRG":
+    elif receptor == "TRG" or receptor == "TRG_UM":
         a = VDJ.TRG(read, dbpath)
-    elif receptor == "IGH":
+    elif receptor == "IGH" or receptor == "IGH_UM":
         a = VDJ.IGH(read, dbpath)
-    elif receptor == "IGK":
+    elif receptor == "IGK" or receptor == "IGK_UM":
         a = VDJ.IGK(read, dbpath)
-    elif receptor == "IGL":
+    elif receptor == "IGL" or receptor == "IGL_UM":
         a = VDJ.IGL(read, dbpath)
     result = a.run()
     return result
@@ -87,11 +87,6 @@ fulldf = fulldf[["Read ID", "Read"]]
 df2 = df2.drop("Read ID", axis = 1)
 fulldf = pd.merge(fulldf, df2, how='left', on='Read')
 fulldf = fulldf[["Filename", "Read ID", "Read", "Chromosome", "Position", "VID", "V Match", "V Match Percent", "V Match Length", "JID", "J Match", "J Match Percent", "J Match Length", "JUNCTION", "CDR3", "Reason"]]
-try:
-    df = pd.read_hdf(os.path.dirname(os.path.dirname(path))+"/raw_output.h5", receptor, mode='r')
-    fulldf = fulldf.append(df)
-except:
-    pass
 fulldf.to_hdf(os.path.dirname(os.path.dirname(path))+"/raw_output.h5", receptor)
 del df2
 del fulldf
