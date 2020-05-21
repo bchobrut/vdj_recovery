@@ -11,6 +11,7 @@ RUN apt-add-repository universe
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-pip
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-tk
+RUN yes | pip install --upgrade pip
 RUN yes | pip install numpy
 RUN yes | pip install pandas
 RUN yes | pip install biopython
