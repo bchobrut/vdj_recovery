@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 RUN apt-get -y upgrade
 RUN apt-get update
+RUN apt-get install -y apt-transport-https
 RUN apt-get install -y build-essential
 RUN apt-get install -y locales locales-all
 ENV LC_ALL en_US.UTF-8
