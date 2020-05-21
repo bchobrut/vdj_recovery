@@ -89,7 +89,7 @@ fulldf = pd.merge(fulldf, df2, how='left', on='Read')
 fulldf = fulldf[["Filename", "Read ID", "Read", "Chromosome", "Position", "VID", "V Match", "V Match Percent", "V Match Length", "JID", "J Match", "J Match Percent", "J Match Length", "JUNCTION", "CDR3", "Reason"]]
 try:
     df = pd.read_hdf(os.path.dirname(os.path.dirname(path))+"/raw_output.h5", receptor)
-    fulldf.append(df)
+    fulldf = fulldf.append(df)
 except:
     pass
 fulldf.to_hdf(os.path.dirname(os.path.dirname(path))+"/raw_output.h5", receptor)
