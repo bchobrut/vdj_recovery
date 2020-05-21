@@ -33,7 +33,7 @@ class VDJrecord(object):
         print ("Loading hdf files from path: %s" %path)
         self.raw = pd.DataFrame()
         for receptor in ["TRA", "TRB", "TRG", "TRD", "IGH", "IGK", "IGL", "TRA_UM", "TRB_UM", "TRG_UM", "TRD_UM", "IGH_UM", "IGK_UM", "IGL_UM"]:
-            print ("Loading hdf %s" %receptor.replace("_UM", "")
+            print ("Loading hdf %s" %receptor.replace("_UM", ""))
             df = pd.read_hdf(path,receptor.replace("_UM", ""))
             df["Receptor"] = receptor.replace("_UM", "")
             self.raw = pd.concat([self.raw, df])
