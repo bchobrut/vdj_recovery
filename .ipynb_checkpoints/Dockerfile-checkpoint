@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 RUN apt-get -y upgrade
 RUN apt-get update
 RUN apt-get install -y build-essential
