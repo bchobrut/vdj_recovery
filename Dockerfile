@@ -21,4 +21,5 @@ RUN yes | pip install tables
 RUN yes | pip install localcider
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git-all
 RUN git clone https://github.com/bchobrut/vdj_recovery.git
+RUN chmod -R 777 /vdj_recovery
 CMD sh /vdj_recovery/Master_Header.sh
